@@ -26,7 +26,7 @@ import yaml
 from urllib import urlopen
 
 # FreeDNS Update Key
-config = yaml.load(open('./config.yml').read())
+config = yaml.load(open('/usr/lib/afraid_dns_update/config.yml').read())
 update_key = config['update_key']
 
 # FreeDNS Update URL
@@ -39,7 +39,7 @@ ip_url = "http://www.danielgibbs.net/ip.php"
 external_ip = urlopen(ip_url).read()
 
 # The file where the last known external IP is written
-ip_file = "freedns_ip"
+ip_file = "/usr/lib/afraid_dns_update/freedns_ip"
 
 # Create the file if it doesnt exist otherwise update old IP
 if not os.path.exists(ip_file):
